@@ -27,7 +27,7 @@ function App() {
 
     getMembers();
     getTeams();
-  }, [teams]);
+  }, [newTeam]);
 
   const handleCreateTeam = async () => {
     await createTeam(newTeam);
