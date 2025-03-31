@@ -6,7 +6,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 const Info = () => {
   const title =
-    "Cada equipo debe estar formado por tres personas: Un Project leader, un Engineering Architect y un Account Manager y los tres miembros deben pertenecer al mismo Projects availability.";
+    "Each team must be composed of three people: a Project Leader, an Engineering Architect, and an Account Manager, and all three members must belong to the same Projects availability.";
   return (
     <Tooltip title={title}>
       <InfoOutlinedIcon color="primary" fontSize="small" sx={{ ml: 1 }} />
