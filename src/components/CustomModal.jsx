@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Modal, Box, Typography, Button } from "@mui/material";
 
 import NewTeamForm from "./NewTeamForm";
 import Info from "./Info";
+import { GeneralContext } from "../context/GeneralContext";
 
-const CustomModal = ({ open, handleClose }) => {
+const CustomModal = ({ open, handleClose, handleCreateTeam }) => {
+  const { newTeam } = useContext(GeneralContext);
+
+  const canCreateTeam =
+    newTeam.name &&
+    newTeam.projectLeaderId &&
+    newTeam.engineeringArchitectId &&
+    newTeam.accountManagerId;
+
   return (
     <Modal open={open} onClose={handleClose}>
       <Box sx={boxStyle}>
@@ -24,7 +33,12 @@ const CustomModal = ({ open, handleClose }) => {
         </div>
 
         <NewTeamForm />
-        <Button variant="contained" sx={{ width: "40%", alignSelf: "center" }}>
+        <Button
+          variant="contained"
+          sx={{ width: "40%", alignSelf: "center" }}
+          disabled={!canCreateTeam}
+          onClick={handleCreateTeam}
+        >
           Create
         </Button>
       </Box>
