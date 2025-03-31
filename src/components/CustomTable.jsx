@@ -13,7 +13,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import { GeneralContext } from "../context/GeneralContext";
 
-const CustomTable = ({ isTeam = false, rows, id, onDelete }) => {
+const CustomTable = ({ isTeam = false, rows, id, onDelete, title }) => {
   return (
     <TableContainer
       component={Paper}
@@ -35,7 +35,7 @@ const CustomTable = ({ isTeam = false, rows, id, onDelete }) => {
           borderBottom: "1px solid #ccc",
         }}
       >
-        {isTeam ? "Team" : "All Members"}
+        {isTeam ? title : "All Members"}
       </Typography>
 
       {isTeam && (

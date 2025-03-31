@@ -27,7 +27,7 @@ function App() {
 
     getMembers();
     getTeams();
-  }, []);
+  }, [teams]);
 
   const handleCreateTeam = async () => {
     await createTeam(newTeam);
@@ -67,6 +67,8 @@ function App() {
             rows={team.members}
             id={team.id}
             onDelete={handleDeleteTeam}
+            key={team.id}
+            title={team.name}
           />
         ))}
       <CustomTable rows={members} />

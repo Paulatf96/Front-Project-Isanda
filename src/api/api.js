@@ -29,7 +29,7 @@ const deleteTeam = async (teamId) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(teamId),
+      body: JSON.stringify({ teamId }),
     });
   } catch (error) {
     console.error(error);
